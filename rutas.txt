@@ -1,0 +1,21 @@
++--------+-----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
+|[32m Domain [39m|[32m Method    [39m|[32m URI                    [39m|[32m Name             [39m|[32m Action                                                                 [39m|[32m Middleware   [39m|
++--------+-----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
+|        | GET|HEAD  | /                      |                  | Closure                                                                | web          |
+|        | GET|HEAD  | api/user               |                  | Closure                                                                | api,auth:api |
+|        | GET|HEAD  | home                   | home             | App\Http\Controllers\HomeController@index                              | web,auth     |
+|        | GET|HEAD  | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+|        | POST      | logout                 | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web          |
+|        | POST      | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+|        | GET|HEAD  | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+|        | POST      | password/reset         | password.update  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
+|        | GET|HEAD  | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+|        | POST      | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD  | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | GET|HEAD  | thoughts               | thoughts.index   | App\Http\Controllers\ThoughtController@index                           | web,auth     |
+|        | POST      | thoughts               | thoughts.store   | App\Http\Controllers\ThoughtController@store                           | web,auth     |
+|        | GET|HEAD  | thoughts/{thought}     | thoughts.show    | App\Http\Controllers\ThoughtController@show                            | web,auth     |
+|        | PUT|PATCH | thoughts/{thought}     | thoughts.update  | App\Http\Controllers\ThoughtController@update                          | web,auth     |
+|        | DELETE    | thoughts/{thought}     | thoughts.destroy | App\Http\Controllers\ThoughtController@destroy                         | web,auth     |
++--------+-----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
